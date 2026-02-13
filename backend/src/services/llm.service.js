@@ -4,15 +4,21 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 const model = genAI.getGenerativeModel({
   model: "gemini-2.5-flash",
+  generationConfig: {
+    responseMimeType: "application/json",
+  },
 });
 
+
 function cleanJsonResponse(text) {
-  // Remove ```json ``` wrappers if present
   return text
     .replace(/```json/g, "")
     .replace(/```/g, "")
+    .replace(/\*\*/g, "")      // remove bold
+    .replace(/`/g, "")         // remove stray backticks
     .trim();
 }
+
 
 async function generateSpec(input) {
   const prompt = `
