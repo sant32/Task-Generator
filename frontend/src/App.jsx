@@ -3,7 +3,7 @@ import Sidebar from "@/components/layout/Sidebar"
 import SpecForm from "@/components/spec/SpecForm"
 import SpecEditor from "@/components/spec/SpecEditor"
 import { Routes, Route, Link } from "react-router-dom"
-import Status from "@/pages/Status"
+import Status from "@/pages/status"
 
 import {
   generateSpec,
