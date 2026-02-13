@@ -16,21 +16,21 @@ export default function Status() {
 
   const checkStatus = async () => {
     try {
-      await axios.get("http://localhost:3001/api/health")
+      await axios.get("https://task-generator-hrz3.onrender.com/api/health")
       setStatus((prev) => ({ ...prev, backend: "Healthy" }))
     } catch {
       setStatus((prev) => ({ ...prev, backend: "Down" }))
     }
 
     try {
-      await axios.get("http://localhost:3001/api/health/db")
+      await axios.get("https://task-generator-hrz3.onrender.com/api/health/db")
       setStatus((prev) => ({ ...prev, db: "Healthy" }))
     } catch {
       setStatus((prev) => ({ ...prev, db: "Down" }))
     }
 
     try {
-      await axios.get("http://localhost:3001/api/health/llm")
+      await axios.get("hhttps://task-generator-hrz3.onrender.com/api/health/llm")
       setStatus((prev) => ({ ...prev, llm: "Healthy" }))
     } catch {
       setStatus((prev) => ({ ...prev, llm: "Down" }))

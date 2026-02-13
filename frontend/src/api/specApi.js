@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const API = "http://localhost:3001/api/spec"
+const API = "https://task-generator-hrz3.onrender.com/api/spec"
 
 export const generateSpec = (data) =>
   axios.post(`${API}/generate`, data)
