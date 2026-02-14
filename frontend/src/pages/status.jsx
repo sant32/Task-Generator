@@ -30,7 +30,7 @@ export default function Status() {
     }
 
     try {
-      await axios.get("hhttps://task-generator-hrz3.onrender.com/api/health/llm")
+      await axios.get("https://task-generator-hrz3.onrender.com/api/health/llm")
       setStatus((prev) => ({ ...prev, llm: "Healthy" }))
     } catch {
       setStatus((prev) => ({ ...prev, llm: "Down" }))
